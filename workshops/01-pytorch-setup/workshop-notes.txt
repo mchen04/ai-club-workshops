@@ -1,0 +1,178 @@
+﻿Workshop 1: Tools and Software (PyTorch Installations and Dependencies)
+
+
+Introduction
+Welcome to the AI Club's first technical workshop! Today, we're focusing on PyTorch installations and dependencies. Our goal is to lay a strong foundation for your AI journey, emphasizing the importance of understanding the basics. Let's get started with some introductions, and then dive into the world of PyTorch.
+________________
+Understanding PyTorch: A Beginner's Perspective
+What is PyTorch?
+PyTorch is like a toolbox for deep learning, a kind of artificial intelligence that mimics the way our brains work. Developed by Facebook, it's free for everyone and is especially loved by researchers and developers. PyTorch speaks the language of Python, one of the easiest programming languages to learn, making it a favorite choice for those new to coding.
+
+
+Why PyTorch is Great for Beginners:
+* Easy to Learn: Think of PyTorch as a friendly guide into the world of AI. Its simplicity helps you focus more on learning AI concepts rather than struggling with complex coding.
+* Flexibility: Imagine playing with LEGO blocks. PyTorch is similar; it lets you easily build and change AI models, offering a fun, hands-on learning experience.
+* Debugging Made Simple: If something goes wrong in your AI model, PyTorch makes it easier to find and fix the issue, much like having a helpful assistant by your side.
+* Community Support: You're not alone in your learning journey. PyTorch has a supportive community where you can find answers, tutorials, and lots of encouragement.
+
+
+PyTorch vs. TensorFlow:
+While TensorFlow, another AI toolbox from Google, is also popular, PyTorch is often the go-to choice for beginners. Why? Because it's more straightforward and easier to grasp. TensorFlow is powerful too, but it's a bit like jumping into the deep end when you're just learning to swim.
+
+
+In summary, PyTorch is a welcoming first step into the world of AI. It's like having a friendly teacher, a supportive community, and a set of easy-to-use tools all rolled into one. That's why we're focusing on it today – to make your start in AI as smooth and enjoyable as possible!
+
+
+________________
+
+
+Installing PyTorch
+* Download Anaconda from Anaconda's website: https://www.anaconda.com/download 
+   * Anaconda is a distribution of Python and R programming languages for scientific computing. By downloading it, you get Python and a collection of packages (like NumPy, Pandas, etc.) that are commonly used in data science and machine learning.
+* Install Anaconda by following the prompts.
+* Install PIP:
+   * PIP is a package manager for Python. It's used to install and manage additional Python packages that are not included in the standard library.
+   * curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
+      * Running this command fetches the PIP installation script from the PyPA website and saves it as get-pip.py on your local machine. You'll then use this script to install PIP on your system."
+   * Python get-pip.py
+      * When you run python get-pip.py, Python executes the PIP installation script. This script contains instructions for installing PIP, including fetching the necessary packages and setting up PIP's functionality on your system.
+   * (If Necessary) Add PIP to your system's PATH environment variable:
+      * Navigate to 'Environment Variables' in your system settings.
+      * Edit the 'Path' variable in the 'System Variables' section.
+      * Add a new entry and paste the path to the PIP installation directory."
+* Open VSCode, create a new folder as your project repository, and within it, create a file named main.py for your Python code
+* In the terminal, type the following commands:
+   * conda create -n pytorch3.8 python=3.8
+      * This creates a new virtual environment which allow you to manage separate package installations for different projects.
+   * conda activate pytorch3.8
+      * When activated, any Python packages you install will only be available in this environment.
+   * To see your environments: conda env list
+      * This command shows a list of all the virtual environments you have created with Anaconda.
+   * To later deactivate environment: conda deactivate
+      * This command is used when you want to stop using a virtual environment and return to your base environment or switch to another one.
+   * Install PyTorch: pip install torch
+      * Install pytorch (usage explained earlier)
+   * Install NumPy: pip install numpy
+      * This command installs NumPy, a fundamental package for scientific computing with Python. It provides support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+
+
+________________
+
+
+Demo
+Paste this code into main.py:
+
+
+import torch
+import numpy
+
+
+# Check if PyTorch is installed and print the version
+print(f"PyTorch Version: {torch.__version__}")
+
+
+# Create a tensor
+tensor_a = torch.tensor([1, 2, 3])
+tensor_b = torch.tensor([4, 5, 6])
+
+
+# Perform a simple addition
+result = tensor_a + tensor_b
+
+
+# Print the tensors and the result
+print(f"Tensor A: {tensor_a}")
+print(f"Tensor B: {tensor_b}")
+print(f"Result (A + B): {result}")
+
+
+Run the code (python main.py) to see the output
+  
+
+
+
+Tensors Definition:
+Tensors in PyTorch are essentially multi-dimensional arrays, similar to NumPy arrays. They are the fundamental data structures used in PyTorch for building neural networks and performing various operations on data. Tensors can have various dimensions, for example:
+* A 1D tensor is like a list or a one-dimensional array.
+* A 2D tensor is like a matrix or a two-dimensional array.
+* A 3D tensor and higher dimensions can be thought of as arrays with more depth.
+
+
+These tensors can store data in various formats, such as integers or floating-point numbers, and are used for mathematical operations like addition, multiplication, and complex operations used in machine learning. Tensors can be moved to a GPU to enable faster computation, which is a key advantage in PyTorch for deep learning tasks.
+________________
+
+
+Interactive Coding Example with PyTorch (Increase Interest + Show how simple AI can be)
+Step 1: Installing Necessary Libraries
+Before you begin, make sure you have the required libraries installed. Open your command line or terminal and run the following command:
+* pip install transformers torch
+This will install PyTorch and transformers, which are essential for our code.
+
+
+Transformers:
+They are a kind of advanced computer model used for understanding and working with language. They are important in the field of natural language processing (NLP), which deals with how computers handle human language. Unlike older models that read text in a set order, Transformers focus on different parts of the text at different times. This special focus, called self-attention, helps them understand complex relationships in the text and work well even with very large amounts of data. PyTorch, the software that runs these models, is great for this because it can handle changes easily and works fast with powerful computer processors, known as GPUs. This makes PyTorch a favorite choice for tasks like translating languages, summarizing text, and building systems that can answer questions.
+
+
+Step 2: Creating the Python Script
+Create a new Python file named transformer.py in your project directory and paste the following code into it:
+
+
+from transformers import pipeline
+
+
+# Load a pre-trained BERT model for sentiment analysis
+sentiment_analysis = pipeline("sentiment-analysis")
+
+
+# Prompt for user input
+user_input = input("Enter a sentence or paragraph for sentiment analysis: ")
+
+
+# Perform sentiment analysis
+result = sentiment_analysis(user_input)
+
+
+# Display the results
+print("Sentiment Analysis Result:", result)
+
+
+BERT Model:
+A BERT model is a special type of computer program that's really good at understanding human language. It's designed to help computers figure out the meaning of words and sentences, much like how we understand language. BERT stands for Bidirectional Encoder Representations from Transformers. Here's what that means in simpler terms:
+
+
+* Bidirectional: BERT looks at the context of words from both sides (left and right) in a sentence. This is like understanding a word based on what comes before and after it.
+* Encoder: It converts words and sentences into a form that the computer can understand.
+* Representations: This is about how BERT captures and represents the meaning of words and sentences.
+* Transformers: This is the technology BERT uses, which is very good at handling language.
+
+
+Step 4: Running the Script
+Ensure your project directory contains the script (transformer.py)
+Run the script by executing:
+* python transformer.py
+
+
+The pipeline function in the transformers library is a tool that simplifies the process of using machine learning models for various tasks like sentiment analysis, text generation, or language translation. It automatically handles many of the complex steps involved, like processing the input data and using the model to make predictions, making it easier for users to work with these advanced models.
+
+
+The script will analyze the sentiment of the input text, classifying it as positive, negative, or neutral, thereby demonstrating the nuanced understanding of human language by a state-of-the-art NLP model.
+________________
+
+
+Q&A Session
+Encourage questions and provide additional resources for learning.
+
+
+Socials
+Discord: https://discord.gg/tmd2hQE4SK 
+Instagram: https://www.instagram.com/ucrai_/ 
+Highlander Link: https://highlanderlink.ucr.edu/organization/ai_at_ucr 
+LinkedIn: https://www.linkedin.com/company/ai-at-ucr/ 
+
+
+Wrap-Up
+Thank everyone for their participation and remind them about upcoming events.
+
+
+Closing Remark
+End with a light-hearted AI or PyTorch joke to keep the mood upbeat and engaging!

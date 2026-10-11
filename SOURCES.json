@@ -1,0 +1,153 @@
+{
+  "format_version": 1,
+  "history_anchor_commit": "76a920efdf029c9bb77c116f84ba7faf52e548e2",
+  "history_preservation": "Original source tips are parents of the empty-tree main bootstrap history anchor, remaining ancestors after squash merge.",
+  "components": [
+    {
+      "source_repository": "https://github.com/mchen04/ai-club-workshop-1-pytorch-setup",
+      "source_default_branch": "main",
+      "source_commit": "f031b99c18919a173177c1e3f30f04a0ce129c26",
+      "source_tree": "e7cc43dada123a05718d9c9aff16d82893834e5f",
+      "source_commit_count": 6,
+      "retained_folder": "workshops/01-pytorch-setup",
+      "files": [
+        {
+          "source_path": "README.md",
+          "source_mode": "100644",
+          "source_blob": "4f56fdad68c80aff367e37f8ca932bc334f29b08",
+          "retained_path": "workshops/01-pytorch-setup/README.md",
+          "retained_blob": "cb23e214f3c348bc43034004c2ae41d76a5255ba",
+          "classification": "documentation: prepended component cwd/setup/resources quickstart"
+        },
+        {
+          "source_path": "main.py",
+          "source_mode": "100644",
+          "source_blob": "a1da41304430aa490f8b9456b81ee6f5d463c925",
+          "retained_path": "workshops/01-pytorch-setup/main.py",
+          "retained_blob": "a1da41304430aa490f8b9456b81ee6f5d463c925",
+          "classification": "unchanged"
+        },
+        {
+          "source_path": "transformer.py",
+          "source_mode": "100644",
+          "source_blob": "070eadd16f5cd48596a6f65f9a92899874ecc3d3",
+          "retained_path": "workshops/01-pytorch-setup/transformer.py",
+          "retained_blob": "070eadd16f5cd48596a6f65f9a92899874ecc3d3",
+          "classification": "unchanged"
+        }
+      ],
+      "added_dependency_manifests": [
+        "requirements-sentiment.txt",
+        "requirements.txt"
+      ],
+      "added_resources": [
+        "workshop-notes.txt"
+      ]
+    },
+    {
+      "source_repository": "https://github.com/mchen04/ai-club-workshop-2-linear-regression",
+      "source_default_branch": "main",
+      "source_commit": "8da8e472427001ad4a87b1768b0021c8506706a1",
+      "source_tree": "6882324bd183522eee27faf674b34eac09ad7c53",
+      "source_commit_count": 3,
+      "retained_folder": "workshops/02-linear-regression",
+      "files": [
+        {
+          "source_path": "README.md",
+          "source_mode": "100644",
+          "source_blob": "34d2a32aaccaa4e78f3c07bc06569a3f93cf3c83",
+          "retained_path": "workshops/02-linear-regression/README.md",
+          "retained_blob": "22a36479a3d8886c6b2d7a8cadc91604c6dfed7c",
+          "classification": "documentation: prepended component cwd/setup/resources quickstart"
+        },
+        {
+          "source_path": "housing.py",
+          "source_mode": "100644",
+          "source_blob": "434589bdc1cacc8ed955370a7a9305ebbee46a20",
+          "retained_path": "workshops/02-linear-regression/housing.py",
+          "retained_blob": "434589bdc1cacc8ed955370a7a9305ebbee46a20",
+          "classification": "unchanged"
+        },
+        {
+          "source_path": "main.py",
+          "source_mode": "100644",
+          "source_blob": "e48779580692ebc1eca4d46d21641f0a0c43db44",
+          "retained_path": "workshops/02-linear-regression/main.py",
+          "retained_blob": "e48779580692ebc1eca4d46d21641f0a0c43db44",
+          "classification": "unchanged"
+        }
+      ],
+      "added_dependency_manifests": [
+        "requirements.txt"
+      ],
+      "added_resources": [
+        "workshop-notes.txt"
+      ]
+    },
+    {
+      "source_repository": "https://github.com/mchen04/ai-club-mini-workshop-gemini-api-keys",
+      "source_default_branch": "main",
+      "source_commit": "ad691935404fe6da12a48dd1cf01dcc32aa14bb0",
+      "source_tree": "b1a99b0225d17401870cfa70530a1c5a1dcd5f31",
+      "source_commit_count": 2,
+      "retained_folder": "workshops/mini-gemini-api-keys",
+      "files": [
+        {
+          "source_path": ".gitignore",
+          "source_mode": "100644",
+          "source_blob": "2eea525d885d5148108f6f3a9a8613863f783d36",
+          "retained_path": "workshops/mini-gemini-api-keys/.gitignore",
+          "retained_blob": "2eea525d885d5148108f6f3a9a8613863f783d36",
+          "classification": "unchanged"
+        },
+        {
+          "source_path": "README.md",
+          "source_mode": "100644",
+          "source_blob": "6d4cbd29a303ae382ada565243612cb4aa858d07",
+          "retained_path": "workshops/mini-gemini-api-keys/README.md",
+          "retained_blob": "7d2e4f30963da9b259616ab248bc96951d4106de",
+          "classification": "documentation: prepended component cwd/setup/resources quickstart"
+        },
+        {
+          "source_path": "main.py",
+          "source_mode": "100644",
+          "source_blob": "c5214d2680f4d15fa968215af206c3d6e5053259",
+          "retained_path": "workshops/mini-gemini-api-keys/main.py",
+          "retained_blob": "c5214d2680f4d15fa968215af206c3d6e5053259",
+          "classification": "unchanged"
+        }
+      ],
+      "added_dependency_manifests": [
+        "requirements.txt"
+      ],
+      "added_resources": []
+    }
+  ],
+  "external_resources": [
+    {
+      "retained_path": "workshops/01-pytorch-setup/workshop-notes.txt",
+      "source_url": "https://docs.google.com/document/d/1DZFyE8RZvltkBdzuq8VtBDb110S4A16S-Wr5XswysCI/edit?usp=sharing",
+      "export_url": "https://docs.google.com/document/d/1DZFyE8RZvltkBdzuq8VtBDb110S4A16S-Wr5XswysCI/export?format=txt",
+      "captured_utc": "2026-10-11T18:29:41.874560+00:00",
+      "sha256": "db878be8f3ff96fecc594356be485da9473cdf0d250c3383fed05e30768c1a15",
+      "classification": "added resource: exact public text export of the document linked by the original README; historical text/formatting retained",
+      "bytes": 10081
+    },
+    {
+      "retained_path": "workshops/02-linear-regression/workshop-notes.txt",
+      "source_url": "https://docs.google.com/document/d/1DAKWIrIulB-Pldfk3CpiCNAQXdOjHC1D2bLJ_xgM_EY/edit?usp=sharing",
+      "export_url": "https://docs.google.com/document/d/1DAKWIrIulB-Pldfk3CpiCNAQXdOjHC1D2bLJ_xgM_EY/export?format=txt",
+      "captured_utc": "2026-10-11T18:29:43.202443+00:00",
+      "sha256": "68a921d1dbf0ef7eb0b447f3858437a0fc6bec8c72a7063917f384442ddb6139",
+      "classification": "added resource: exact public text export of the document linked by the original README; historical text/formatting retained",
+      "bytes": 17307
+    }
+  ],
+  "added_root_files": [
+    ".gitignore",
+    "README.md",
+    "ATTRIBUTION.md",
+    "SOURCES.json"
+  ],
+  "license_policy": "No blanket relicensing; source licenses and original attribution are retained."
+}
