@@ -1,0 +1,317 @@
+﻿Workshop 2: Dive Into Linear Regression with PyTorch
+
+
+
+
+Introduction
+Welcome to the AI Club's second technical workshop! Building on our previous session on PyTorch installations and dependencies, today we're taking a step into the world of machine learning with a focus on linear regression using PyTorch. This workshop is designed to be interactive and hands-on, so get ready to code along and explore the basics of linear regression!
+
+
+Quick Recap of PyTorch
+What is PyTorch?
+* A toolbox for AI, mainly deep learning.
+* Uses Python, making it easy to learn and use.
+Key Features
+* User-friendly: Great for beginners.
+* Flexible: Like building with LEGO, it lets you create and modify AI models easily.
+* Debug-friendly: Simplifies finding and fixing code issues.
+
+
+Understanding Linear Regression
+What is Linear Regression?
+* Definition: Linear Regression is a statistical method used in machine learning. It predicts a response (dependent variable) based on a single or multiple predictors (independent variables).
+How It Works: 
+* It finds a linear relationship between input variables (X) and an output variable (Y). This relationship is represented as Y = aX + b, where a is the slope and b is the intercept.
+Why It's a Fundamental Concept in Machine Learning
+* Foundation for Understanding: Linear regression is one of the simplest and most fundamental algorithms in machine learning. It lays the groundwork for understanding more complex models.
+* Interpretability: It's straightforward and easy to interpret, making it a great starting point for those new to machine learning.
+* Basics of Model Training: Learning linear regression introduces core concepts like loss functions, gradient descent, and overfitting, which are essential in more advanced machine learning algorithms.
+
+
+
+
+Improved Installation Steps for Workshop:
+Setting Up a Development Environment:
+* GitHub Repository: Start by creating a new repository on GitHub. This will be your project's home where you can store and manage your code.
+* Cloning with VSCode: Use Visual Studio Code (VSCode) to clone the repository onto your local machine. This makes it easier to manage your code and track changes.
+Creating a Python Environment:
+* Conda Environment: Create a new Conda environment using Python 3.8. Make sure to name it distinctively to avoid confusion with other environments. 
+Essential Installations:
+* Python via Anaconda: Confirm that Python is installed, preferably through Anaconda. Anaconda simplifies package management and deployment, making it a preferred choice for handling Python distributions.
+* PyTorch Installation: Install PyTorch by running pip install torch. PyTorch is a leading deep learning library that's both powerful and user-friendly.
+* Installing Matplotlib:
+   * Command: Execute pip install matplotlib.
+   * Purpose for Beginners:
+      * Visual Learning: Matplotlib acts as a digital canvas for your data, allowing you to create diverse visual representations. It's especially helpful for beginners to visualize data and understand complex concepts in a more digestible format.
+      * Results Visualization: It is essential for displaying the performance of your models, such as the decrease in loss over training epochs, in an intuitive and engaging manner.
+      * Debugging Tool: Visualizations can reveal hidden patterns or anomalies in your data, assisting in the debugging process.
+Installing Scikit-learn:
+* Command: Run pip install scikit-learn.
+* Purpose for Beginners:
+   * Model Access: Scikit-learn provides a suite of pre-built models, enabling beginners to dive into machine learning without the complexity of coding algorithms from scratch.
+   * Data Preprocessing: It offers tools for essential data preprocessing tasks, such as feature scaling and splitting datasets into training and test sets, which are crucial steps in most machine learning workflows.
+   * Learning Platform: The library serves as an excellent resource for experimenting with and learning about different machine learning algorithms and techniques.
+
+
+Interactive Coding Session: Implementing Linear Regression
+
+
+Data Preparation
+* Generating a Synthetic Dataset:
+   * Purpose: Create a simple dataset to understand how linear regression works.
+# Import necessary libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import torch
+import torch.nn as nn
+
+
+# Generate random data
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+
+# Plot
+plt.scatter(X, y)
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Synthetic Linear Data')
+plt.show()
+
+
+Generate Random Data:
+X: A set of random numbers, acting as our independent variable (features).
+y: Dependent variable (target) calculated using the equation y = 4 + 3*X + random noise. This mimics real-world data where the relationship between variables isn't perfect due to random variations (noise).
+Visualize the Data:
+Using matplotlib.pyplot, we create a scatter plot of X and y.
+The plot helps us see the linear relationship we've created between X and y.
+  
+
+
+
+Model Creation - Defining a Linear Model in PyTorch
+# Linear model
+model = nn.Linear(1, 1)  # 1 input feature, 1 output feature
+
+
+* Loss Function and Optimizer:
+criterion = torch.nn.MSELoss()  # Mean Squared Error Loss
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)  # Stochastic Gradient Descent
+
+
+What is Happening:
+Using PyTorch's nn Module:
+* nn in torch.nn stands for neural network. In PyTorch, this module provides building blocks to create different types of neural network models.
+
+
+Defining a Linear Model:
+* model = nn.Linear(1, 1): Here, we are defining our model as a linear one.
+* Understanding Linear(1, 1):
+   * The first 1 represents the number of input features. In our case, we have one feature (X).
+   * The second 1 signifies the number of output features. Since we're predicting one thing (y), it's also one.
+
+
+Loss Function and Optimizer Definitions:
+Loss Function (torch.nn.MSELoss())
+* What It Is: The loss function is like a scorecard for how well your model is performing. It measures the difference between what the model predicts and what the actual values are.
+* Mean Squared Error Loss: In our case, we're using the Mean Squared Error (MSE) loss. Imagine you're throwing darts, and each dart is a prediction your model makes. The MSE measures how far each dart is from the bullseye (the true value). It does this by squaring the distance of each dart from the bullseye and then taking the average of these squared distances. Squaring is done to make sure we consider larger errors more severely than smaller ones.
+* Why It's Used: This loss function is great for regression problems (like predicting house prices, temperatures, etc.) because it emphasizes larger errors more significantly than smaller ones, ensuring the model is accurate.
+Optimizer (torch.optim.SGD)
+* What It Is: The optimizer is like a coach for your model. It helps the model learn from its mistakes and improve over time.
+* Stochastic Gradient Descent (SGD): We're using a specific type of coach called Stochastic Gradient Descent. Imagine your model is in a valley and needs to find the lowest point. The lowest point is where the model has the least error. SGD helps the model take steps down the valley to find this lowest point.
+* Learning Rate (lr=0.01): This is like telling the model how big of a step to take. A learning rate of 0.01 means taking small steps. If the steps are too big, the model might overshoot and miss the lowest point. If they're too small, it might take too long to get there.
+* Why It's Used: SGD is a popular optimizer because it's simple and effective. It works well in many situations, especially when the data is large or complex.
+
+
+In summary, the loss function (MSE) tells us how far off our predictions are, and the optimizer (SGD) helps us make better predictions by adjusting the model in response to the loss function's feedback.
+
+
+Purpose
+Simple Prediction: This model is designed to take one value (like a number from our X dataset), perform a calculation (like drawing a straight line through data), and predict the corresponding y value.
+
+
+________________
+
+
+Training the Model
+* Writing the Training Loop:
+epochs = 100
+for epoch in range(epochs):
+   # Convert arrays to tensors
+   inputs = torch.from_numpy(X).float()
+   targets = torch.from_numpy(y).float()
+
+
+   # Forward pass
+   outputs = model(inputs)
+   loss = criterion(outputs, targets)
+
+
+   # Backward pass and optimization
+   optimizer.zero_grad()
+   loss.backward()
+   optimizer.step()
+
+
+   if (epoch+1) % 10 == 0:
+       print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+
+
+Explanation of Code
+Setting the Number of Repeats (Epochs):
+* Code: epochs = 100
+* Explanation: This is like deciding to let the model practice with the data 100 times.
+Training Loop:
+* Code: for epoch in range(epochs):
+* Explanation: Initiates a loop where each iteration represents one epoch. During each epoch, the model will train on the entire dataset.
+Preparing the Data:
+* inputs = torch.from_numpy(X).float()
+* targets = torch.from_numpy(y).float()
+* Transforms the input (X) and output (y) data into PyTorch tensors, which are multi-dimensional arrays optimized for deep learning operations.
+Model Makes Predictions (Forward Pass):
+*   outputs = model(inputs)
+*   loss = criterion(outputs, targets)
+* The 'forward pass' involves feeding the input data through the model to obtain predictions (outputs). The loss function (criterion) then computes the Mean Squared Error (MSE) between these predictions and the actual targets.
+Learning from Mistakes (Backward Pass and Optimization)
+*   optimizer.zero_grad()
+*   loss.backward()
+*   optimizer.step()
+* optimizer.zero_grad(): Clears old gradients from the last step (otherwise, they will accumulate).
+* loss.backward(): Backpropagation is like the model's method of assessing its errors and learning from them. When the model predicts something, it might be off from the actual answer. Backpropagation calculates the gradient of the loss function, which is essentially a way to measure how much each weight and bias in the model needs to change to reduce errors. The gradient is like a guide that tells the model in which direction and how much it should adjust each parameter (weight and bias) to get closer to the correct answers.
+* optimizer.step(): After backpropagation calculates these gradients, the model needs to use this information to update its weights and biases. This updating step is done by the optimizer. It takes the gradients and makes adjustments to the model's parameters. The size of these adjustments is controlled by the learning rate. If the gradient is like a road map showing where to go, the learning rate determines the speed of travel. This process helps the model to gradually reduce its errors and improve its predictions over time.
+Checking Progress:
+*   if (epoch+1) % 10 == 0:
+*       print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+* Logs the loss every 10 epochs to monitor the model's training progress. The loss value indicates how well the model is predicting; a lower loss means better performance.
+
+
+Model Visualization and Interpretation
+* Understanding and interpreting the model is crucial in any machine learning workflow. This improved section aims to provide a deeper insight into the model's functionality and performance.
+* Print Graph of Model
+with torch.no_grad():
+   predicted = model(torch.from_numpy(X).float()).data.numpy()
+
+
+plt.scatter(X, y)
+plt.plot(X, predicted, color='red', label='Fitted line')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Linear Regression Result')
+plt.legend()
+plt.show()
+
+
+  
+
+Evaluating the Model
+* Testing the Model with New Data:
+   * Generate new data points and use the model to make predictions.
+   * Discussing the Results and Potential Improvements:
+   * Analyze the model’s performance.
+
+
+Real-World Example: Applying Our Linear Regression Model to the California Housing Dataset
+
+
+Introduction to the Dataset
+We're transitioning from synthetic data to a real-world dataset, specifically the California Housing dataset. This dataset is a classic in machine learning, 
+
+
+Dataset and Code Explanation
+Loading the Dataset and Dependencies
+* fimport numpy as np
+* import matplotlib.pyplot as plt
+* from sklearn.datasets import fetch_california_housing
+* import torch
+* import torch.nn as nn
+* import torch.optim as optim
+* california = fetch_california_housing()
+* This code imports the necessary function from scikit-learn to fetch the California Housing dataset. fetch_california_housing() is a function that loads the dataset, which includes data on housing prices along with associated features like median income, housing age, etc.
+Selecting Data Points
+* indices = np.random.choice(range(len(california.target)), 1000, replace=False)
+* X_california = california.data[indices, 0].reshape(-1, 1)  # Median income
+* y_california = california.target[indices]
+* Here, we're randomly selecting 1000 data points from the dataset for simplicity and manageability. X_california represents the median income feature of these selected data points, and y_california is the corresponding housing price. We're focusing on median income as our primary feature to predict housing prices.
+Initial Data Visualization
+* plt.scatter(X_california, y_california, color='blue', label='Data points')
+* plt.xlabel('Median Income')
+* plt.ylabel('Housing Price')
+* plt.title('California Housing Prices (Before Training)')
+* plt.legend()
+* plt.show()
+* Before we train our model, we plot the data points to visualize the relationship between median income and housing prices. This scatter plot gives us an intuitive understanding of the data distribution and potential linear correlations.
+  
+
+
+
+
+
+Model Setup and Training
+* epochs = 100
+* * model = nn.Linear(1, 1)
+* criterion = torch.nn.MSELoss()
+* optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+* We define a linear regression model using PyTorch. The nn.Linear(1, 1) creates a linear model with one input feature (median income) and one output feature (housing price). The loss function is set to Mean Squared Error (MSE), a common choice for regression problems. The optimizer used is Stochastic Gradient Descent (SGD), with a learning rate of 0.01.
+Training Loop
+* for epoch in range(epochs):
+*    # Convert arrays to tensors
+*    inputs = torch.from_numpy(X_california).float()
+*    targets = torch.from_numpy(y_california).float()
+* *    # Forward pass
+*    outputs = model(inputs)
+*    loss = criterion(outputs, targets)
+* *    # Backward pass and optimization
+*    optimizer.zero_grad()
+*    loss.backward()
+*    optimizer.step()
+* *    # Print loss every 10 epochs
+*    if (epoch+1) % 10 == 0:
+*        print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}')
+* In the training loop, we convert our data to tensors, which are optimized for deep learning operations in PyTorch. The model is trained over 100 epochs. Each epoch involves a forward pass (making predictions), calculating the loss, and then a backward pass to update the model's weights based on the loss.
+
+
+
+
+
+
+Post-Training Visualization
+* with torch.no_grad():
+*    predicted = model(torch.from_numpy(X_california).float()).numpy()
+* plt.scatter(X_california, y_california, color='blue', label='Data points')
+* plt.plot(X_california, predicted, color='red', label='Regression Line')
+* plt.xlabel('Median Income')
+* plt.ylabel('Housing Price')
+* plt.title('California Housing Prices (After Training)')
+* plt.legend()
+* plt.show()
+* After training, we visualize the results by plotting the regression line with our data points. This illustrates how well our model has learned to predict housing prices from the median income.
+
+
+  
+
+Consider adjusting the learning rate to various values to observe the effects of overshooting or undershooting, and reflect on the reasons behind the positioning of the resulting line. 
+
+
+Purpose and Learning Outcomes
+While the linear regression model applied to the California Housing dataset may not align perfectly with all data points, it serves as an essential learning tool. It underscores the realities of working with real-world data and the importance of continually refining models and approaches in machine learning. This exercise, therefore, not only teaches the technical aspects of implementing a linear regression model but also imparts a realistic perspective on model performance and the iterative nature of machine learning.
+
+
+
+
+Q&A Session
+Encourage questions and provide additional resources for learning.
+
+
+Socials
+Discord: https://discord.gg/tmd2hQE4SK 
+Instagram: https://www.instagram.com/ucrai_/ 
+Highlander Link: https://highlanderlink.ucr.edu/organization/ai_at_ucr 
+LinkedIn: https://www.linkedin.com/company/ai-at-ucr/ 
+
+
+Wrap-Up
+Thank everyone for their participation and remind them about upcoming events.
+
+
+Closing Remark
+End with a light-hearted AI or linear regression joke to keep the mood upbeat and engaging!
